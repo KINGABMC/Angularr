@@ -1,0 +1,66 @@
+<div class="container-fluid py-4">
+    <h1 class="mb-4">Mon Tableau de Bord</h1>
+    
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Mes Demandes</h6>
+                    <h3 class="mb-0">2</h3>
+                    <div class="badge badge-warning mt-2">En attente de validation</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Prochains RV</h6>
+                    <h3 class="mb-0">1</h3>
+                    <div class="badge badge-success mt-2">Confirmé</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h6 class="text-muted">Consultations Passées</h6>
+                    <h3 class="mb-0">12</h3>
+                    <div class="badge badge-info mt-2">Dossier à jour</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-calendar-check"></i> Mon Prochain RV</h5>
+                </div>
+                <div class="card-body">
+                    <div class="appointment-item">
+                        <h6>Cardiologie - Dr. Sow</h6>
+                        <p class="mb-1"><i class="bi bi-clock"></i> Demain à 09h00</p>
+                        <p class="small text-muted">Hôpital Principal de Dakar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="bi bi-lightning-charge"></i> Actions Rapides</h5>
+                </div>
+                <div class="card-body d-grid gap-3">
+                    <button class="btn btn-outline-primary text-start" routerLink="/demande-rv">
+                        <i class="bi bi-plus-circle"></i> Faire une nouvelle demande de RV
+                    </button>
+                    <button class="btn btn-outline-primary text-start" routerLink="/patient/dossier">
+                        <i class="bi bi-file-medical"></i> Consulter mon dossier médical
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

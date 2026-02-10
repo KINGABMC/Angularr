@@ -1,0 +1,63 @@
+<div class="container py-4">
+    <div class="card border-0 shadow-lg">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-info-square"></i> Détails de la Consultation</h5>
+            <button class="btn btn-sm btn-light" routerLink="/rv">Retour</button>
+        </div>
+        
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p class="text-muted mb-1">Médecin</p>
+                    <h6>Dr. Amadou Diallo (Cardiologue)</h6>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-1">Date</p>
+                    <h6>15 Février 2026 à 14:00</h6>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="d-flex gap-3 mb-4">
+                <button class="btn btn-outline-primary" (click)="toggleInfos()">
+                    <i class="bi bi-chat-left-text"></i> Notes de Consultation
+                </button>
+                <button class="btn btn-outline-success" (click)="toggleOrdonnance()">
+                    <i class="bi bi-prescription2"></i> Voir l'Ordonnance
+                </button>
+            </div>
+
+            @if (showInfos) {
+            <div class="alert alert-info shadow-sm animate-fadeIn">
+                <h6><i class="bi bi-info-circle"></i> Observations médicales</h6>
+                <p class="mb-0">Tension artérielle stable. Rythme cardiaque normal. Prévoir un test d'effort dans 6 mois.</p>
+            </div>
+            }
+
+            @if (showOrdonnance) {
+            <div class="card border-success mt-3 animate-fadeIn">
+                <div class="card-header bg-success text-white py-1">Prescriptions</div>
+                <div class="table-responsive">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Médicament</th>
+                                <th>Posologie</th>
+                                <th>Durée</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Aténolol 50mg</td>
+                                <td>1 comprimé / jour</td>
+                                <td>3 mois</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
