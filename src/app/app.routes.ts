@@ -29,7 +29,5 @@ export const routes: Routes = [
       ]
     },
     { path: '', redirectTo: '/public/login', pathMatch: 'full' },
-     //erreur 404
-    { path: '**', redirectTo: '/public/login' }
    
 ];

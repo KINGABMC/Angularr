@@ -4,19 +4,21 @@
             <h4 class="mb-0"><i class="bi bi-shield-lock"></i> Connexion</h4>
         </div>
         <div class="card-body p-4">
-            <form>
-                <div class="mb-3">
-                    <label class="form-label">Adresse Email</label>
-                    <input type="email" class="form-control" placeholder="nom@exemple.com">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" placeholder="••••••••">
-                </div>
-                <button type="submit" class="btn btn-primary w-100 py-2 shadow-sm" routerLink="/private/dash">
-                    Se connecter
-                </button>
-            </form>
+           <form (submit)="$event.preventDefault()"> <div class="mb-3">
+                <label class="form-label">Adresse Email</label>
+                <input type="email" class="form-control" placeholder="nom@exemple.com">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" placeholder="••••••••">
+            </div>
+            
+            <button type="button" 
+                    class="btn btn-primary w-100 py-2 shadow-sm" 
+                    routerLink="/private/dash">
+                Se connecter
+            </button>
+           </form>
         </div>
     </div>
 </div>
