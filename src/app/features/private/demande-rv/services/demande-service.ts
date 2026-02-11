@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MOCK_DEMANDES } from '../../../../mocks/demande.mock';
-import { DemandeRVFilterModel, DemandeListeRVModel, DemandeListeResponse } from '../models/demande.model';
+import { MOCK_DEMANDES } from '@mocks';
+import { DemandeRVFilterModel, DemandeListeResponse } from '../models/demande.model';
 import { environment } from '../../../../../environments/environment.development';
 @Injectable({
   providedIn: 'root',
@@ -10,6 +10,10 @@ export class DemandeService {
   public  getDemandeRV( filtre: DemandeRVFilterModel={}): DemandeListeResponse {
    // Ici, on simule une requête à un service pour récupérer les demandes
    // Dans une vraie application, vous feriez une requête HTTP à votre backend
+   //simulation appel asynchrone, on utilise setTimeout
+    setTimeout(() => {
+      console.log('Données récupérées du service:', this.getDemandeRV(filtre));
+    }, 5000);
    let demandes =[ ...MOCK_DEMANDES];
     if (filtre.specialite) {
       demandes = demandes.filter(demande => demande.specialite === filtre.specialite);

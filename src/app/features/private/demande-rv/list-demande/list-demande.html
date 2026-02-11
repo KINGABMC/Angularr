@@ -52,14 +52,24 @@
                     <tr>
                         <td>{{ demande.dateDemande }}</td>
                         <td>{{ demande.specialite }}</td>
-                        <td>
-                            @if (demande.statut === 'En attente') {
-                                <span class="badge bg-warning text-dark">{{ demande.statut }}</span>
-                            } @else if (demande.statut === 'Accepté') {
+                        <td >
+                            @switch(demande.statut) {
+                                @case('En attente') {
+                                    <span class="badge bg-warning text-dark">{{ demande.statut }}</span>
+                                }
+                                @case('Accepté') {
                                 <span class="badge bg-success">{{ demande.statut }}</span>
-                            } @else {
+                            } @case('Refusé') {
                                 <span class="badge bg-danger">{{ demande.statut }}</span>
                             }
+                        }
+                          <!--ngSwitch alternative mais dépreciée dans Angular 16, à remplacer par des directives conditionnelles
+                         <td [[ngSwitch]="demande.statut"]>                       
+                                <span *ngSwitchCase="'En attente'" class="badge bg-warning text-dark">{{ demande.statut }}</span>
+                                <span *ngSwitchCase="'Accepté'" class="badge bg-success">{{ demande.statut }}</span>
+                                <span *ngSwitchCase="'Refusé'" class="badge bg-danger">{{ demande.statut }}</span>
+                        </td>
+                           -->
                         </td>
                         <td>
                             <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i> Voir détails</button>
@@ -77,7 +87,7 @@
             
             <nav aria-label="Pagination des demandes">
                 <ul class="pagination pagination-sm mb-0">
-                    <li class="page-item" [class.disabled]="demandesResponse.currentPage === 1">
+                    <li class="page-item" [class.disabled]="desactiverPrecedent">
                         <a class="page-link" href="javascript:void(0)" (click)="onPageChange(demandesResponse!.currentPage - 1)">
                             <i class="bi bi-chevron-left"></i> Précédent
                         </a>
@@ -91,7 +101,7 @@
                         </li>
                     }
 
-                    <li class="page-item" [class.disabled]="demandesResponse.currentPage === demandesResponse.totalPages">
+                    <li class="page-item" [class.disabled]="desactiverSuivant">
                         <a class="page-link" href="javascript:void(0)" (click)="onPageChange(demandesResponse!.currentPage + 1)">
                             Suivant <i class="bi bi-chevron-right"></i>
                         </a>

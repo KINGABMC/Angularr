@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MOCK_RV } from '../../../../mocks/rv.mock';
+import { MOCK_RV } from '@mocks';
 import { RvFilterModel, RvListeResponse } from '../models/rv.model';
 
 @Injectable({ providedIn: 'root' })

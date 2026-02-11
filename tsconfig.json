@@ -12,6 +12,11 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+     "baseUrl": "./",
+     "paths":{
+       "@mocks": ["src/app/mocks/index.ts"],
+      "@mocks/*": ["src/app/mocks/*"]
+      },
     "target": "ES2022",
     "module": "preserve"
   },

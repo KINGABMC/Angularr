@@ -66,6 +66,33 @@ export const MOCK_DEMANDES: DemandeListeRVModel[] = [
          specialite: 'Neurologie',
          heure: '11:00 AM',
      },
-
+     {
+            id: 10,
+            dateDemande: '2024-07-05',
+            statut: 'Refusé',
+            specialite: 'Orthopédie',
+            heure: '11:00 AM',
+     },
+      {
+            id: 11,
+            dateDemande: '2024-07-05',
+            statut: 'Accepté',
+            specialite: 'Pédiatrie',
+            heure: '11:00 AM',
+     },
+     {
+            id: 12,
+            dateDemande: '2024-07-05',
+            statut: 'Accepté',
+            specialite: 'Cardiologie',
+            heure: '11:00 AM',
+     },
+     {
+            id: 13,
+            dateDemande: '2024-07-05',
+            statut: 'Accepté',
+            specialite: 'Ophtalmologie',
+            heure: '11:00 AM',
+        },
      
 ];
