@@ -13,6 +13,6 @@ export interface UserLoginRequest {
     password: string;
 }
 export interface UserLoginResponse{
-    token: string,
+    token?: string,
     user: User;
 }

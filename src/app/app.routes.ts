@@ -9,6 +9,7 @@ import { DossierMedical } from './features/private/dossier-medical/dossier-medic
 import { FormDemande } from './features/private/demande-rv/form-demande/form-demande';
 import { DemandeRv } from './features/private/demande-rv/demande-rv';
 import  {Login} from './features/public/login/login'
+import { isConnectGuard } from './core/guards/is-connect-guard';
 export const routes: Routes = [
     { path: 'public', component: Public,
       children: [
@@ -19,6 +20,8 @@ export const routes: Routes = [
 
     },
     { path: 'private', component: Private,
+      canActivate: [isConnectGuard],
+      canActivateChild: [isConnectGuard],
       children: [
         { path: 'form-demande', component: FormDemande },
          { path: 'dash', component: Dashboard },
@@ -26,6 +29,7 @@ export const routes: Routes = [
          { path: 'rv/detail/:id', component: DetailRv },
          { path: 'patient/dossier', component: DossierMedical },
          { path: 'demande-rv', component: DemandeRv },
+         { path: '', redirectTo: 'dash', pathMatch: 'full' }
       ]
     },
     { path: '', redirectTo: '/public/login', pathMatch: 'full' },
