@@ -7,5 +7,4 @@ import { ListDemande } from './list-demande/list-demande';
   styleUrl: './demande-rv.css',
 })
 export class DemandeRv {
-
 }
